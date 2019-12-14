@@ -1,0 +1,77 @@
+/*
+.sidenav-container {
+    height: 100%;
+}
+
+.sidenav {
+    width: 200px;
+}
+
+.sidenav .mat-toolbar {
+    background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+*/
+
+.btn {
+    cursor: pointer;
+    margin: 20px;
+}
+
+.icon-bar {
+    width: 22px;
+    height: 2px;
+    background: white;
+    margin: 2px;
+    position: relative;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: "header header header" "nav content side" "footer footer footer";
+    grid-template-columns: auto 1fr 200px;
+    grid-template-rows: auto 1fr auto;
+    grid-gap: 10px;
+    height: 100vh;
+}
+
+header {
+    grid-area: header;
+    background-color: blue;
+}
+
+mat-sidenav {
+    grid-area: nav;
+    margin-left: 0.5rem;
+    background-color: yellowgreen;
+}
+
+main {
+    grid-area: content;
+    background-color: pink;
+    overflow-y: scroll;
+}
+
+aside {
+    grid-area: side;
+    margin-right: 0.5rem;
+    background-color: lightblue;
+}
+
+footer {
+    grid-area: footer;
+    background-color: gold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas: "header" "nav" "content" "side" "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto minmax(75px, auto) 1fr minmax(75px, auto) auto;
+    }
+}

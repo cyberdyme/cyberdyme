@@ -1,0 +1,97 @@
+<!--
+<mat-toolbar style="z-index: 999;" color="primary">
+    <div (click)="toggleSideNav()" class="btn">
+        <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'topX'"></div>
+        <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'hide'"></div>
+        <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'bottomX'"></div>
+    </div>
+    <span>Cyberdyme</span>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+        <div style="height: 64px; background-color: yellow;">
+
+        </div>
+        <mat-nav-list>
+            <a mat-list-item href="#">Link 2</a>
+            <a mat-list-item href="#">Link 3</a>
+            <a mat-list-item href="#">Link 4</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+-->
+
+<div class="container">
+    <header>
+        <mat-toolbar style="z-index: 999;" color="primary">
+            <div (click)="toggleSideNav()" class="btn">
+                <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'topX'"></div>
+                <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'hide'"></div>
+                <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'bottomX'"></div>
+            </div>
+            <span>Cyberdyme</span>
+        </mat-toolbar>
+    </header>
+
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+        <div style="height: 64px; background-color: yellow;">
+
+        </div>
+        <mat-nav-list>
+            <a mat-list-item href="#">Link 2</a>
+            <a mat-list-item href="#">Link 3</a>
+            <a mat-list-item href="#">Link 4</a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <main>
+        npm WARN saveError ENOENT: no such file or directory, open '/Users/girishthanki/Development/Angular9/package.json' npm notice created a lockfile as package-lock.json. You should commit this file. npm WARN enoent ENOENT: no such file or directory, open
+        '/Users/girishthanki/Development/Angular9/package.json' npm WARN Angular9 No description npm WARN Angular9 No repository field. npm WARN Angular9 No README data npm WARN Angular9 No license field. + @angular/cli@9.0.0-rc.6 added 260 packages from
+        206 contributors and audited 2885 packages in 9.08s found 0 vulnerabilities girishs-mbp:Angular9 girishthanki$ ./node_modules/.bin/ng --version _ _ ____ _ ___ / \ _ __ __ _ _ _| | __ _ _ __ / ___| | |_ _| / △ \ | '_ \ / _` | | | | |/ _` | '__|
+        | | | | | | / ___ \| | | | (_| | |_| | | (_| | | | |___| |___ | | /_/ \_\_| |_|\__, |\__,_|_|\__,_|_| \____|_____|___| |___/ Angular CLI: 9.0.0-rc.6 Node: 12.4.0 OS: darwin x64 Angular: ... Ivy Workspace: Package Version ------------------------------------------------------
+        @angular-devkit/architect 0.900.0-rc.6 @angular-devkit/core 9.0.0-rc.6 @angular-devkit/schematics 9.0.0-rc.6 @angular/cli 9.0.0-rc.6 @schematics/angular 9.0.0-rc.6 @schematics/update 0.900.0-rc.6 rxjs 6.5.3 girishs-mbp:Angular9 girishthanki$ ./node_modules/.bin/ng
+        new cyberdyme ? Would you like to add Angular routing? Yes ? Which stylesheet format would you like to use? SCSS [ https://sass-lang.com/documentation/syntax#scss ] CREATE cyberdyme/README.md (1031 bytes) CREATE cyberdyme/.editorconfig (246 bytes)
+        CREATE cyberdyme/.gitignore (631 bytes) CREATE cyberdyme/angular.json (3679 bytes) CREATE cyberdyme/package.json (1346 bytes) CREATE cyberdyme/tsconfig.json (535 bytes) CREATE cyberdyme/tslint.json (1953 bytes) CREATE cyberdyme/browserslist (429
+        bytes) CREATE cyberdyme/karma.conf.js (1021 bytes) CREATE cyberdyme/tsconfig.app.json (210 bytes) CREATE cyberdyme/tsconfig.spec.json (270 bytes) CREATE cyberdyme/src/favicon.ico (948 bytes) CREATE cyberdyme/src/index.html (295 bytes) CREATE cyberdyme/src/main.ts
+        (372 bytes) CREATE cyberdyme/src/polyfills.ts (2838 bytes) CREATE cyberdyme/src/styles.scss (80 bytes) CREATE cyberdyme/src/test.ts (642 bytes) CREATE cyberdyme/src/assets/.gitkeep (0 bytes) CREATE cyberdyme/src/environments/environment.prod.ts
+        (51 bytes) CREATE cyberdyme/src/environments/environment.ts (662 bytes) CREATE cyberdyme/src/app/app-routing.module.ts (246 bytes) CREATE cyberdyme/src/app/app.module.ts (393 bytes) CREATE cyberdyme/src/app/app.component.scss (0 bytes) CREATE
+        cyberdyme/src/app/app.component.html (25705 bytes) CREATE cyberdyme/src/app/app.component.spec.ts (1068 bytes) CREATE cyberdyme/src/app/app.component.ts (214 bytes) CREATE cyberdyme/e2e/protractor.conf.js (808 bytes) CREATE cyberdyme/e2e/tsconfig.json
+        (214 bytes) CREATE cyberdyme/e2e/src/app.e2e-spec.ts (642 bytes) CREATE cyberdyme/e2e/src/app.po.ts (262 bytes) ✔ Packages installed successfully. Successfully initialized git. girishs-mbp:Angular9 girishthanki$ ls -l total 160 drwxr-xr-x 18 girishthanki
+        staff 576 12 Dec 22:04 cyberdyme drwxr-xr-x 236 girishthanki staff 7552 12 Dec 22:01 node_modules -rw-r--r-- 1 girishthanki staff 79825 12 Dec 22:01 package-lock.json girishs-mbp:Angular9 girishthanki$ cd cyberdyme/ girishs-mbp:cyberdyme girishthanki$
+        ls -l total 1016 -rw-r--r-- 1 girishthanki staff 1031 12 Dec 22:04 README.md -rw-r--r-- 1 girishthanki staff 3679 12 Dec 22:04 angular.json -rw-r--r-- 1 girishthanki staff 429 12 Dec 22:04 browserslist drwxr-xr-x 5 girishthanki staff 160 12 Dec
+        22:04 e2e -rw-r--r-- 1 girishthanki staff 1021 12 Dec 22:04 karma.conf.js drwxr-xr-x 804 girishthanki staff 25728 12 Dec 22:04 node_modules -rw-r--r-- 1 girishthanki staff 479979 12 Dec 22:04 package-lock.json -rw-r--r-- 1 girishthanki staff 1346
+        12 Dec 22:04 package.json drwxr-xr-x 11 girishthanki staff 352 12 Dec 22:04 src -rw-r--r-- 1 girishthanki staff 210 12 Dec 22:04 tsconfig.app.json -rw-r--r-- 1 girishthanki staff 535 12 Dec 22:04 tsconfig.json -rw-r--r-- 1 girishthanki staff 270
+        12 Dec 22:04 tsconfig.spec.json -rw-r--r-- 1 girishthanki staff 1953 12 Dec 22:04 tslint.json girishs-mbp:cyberdyme girishthanki$ ng --version _ _ ____ _ ___ / \ _ __ __ _ _ _| | __ _ _ __ / ___| | |_ _| / △ \ | '_ \ / _` | | | | |/ _` | '__|
+        | | | | | | / ___ \| | | | (_| | |_| | | (_| | | | |___| |___ | | /_/ \_\_| |_|\__, |\__,_|_|\__,_|_| \____|_____|___| |___/ Angular CLI: 9.0.0-rc.6 Node: 12.4.0 OS: darwin x64 Angular: 9.0.0-rc.6 ... animations, cli, common, compiler, compiler-cli,
+        core, forms ... language-service, platform-browser, platform-browser-dynamic ... router Ivy Workspace: Yes Package Version ----------------------------------------------------------- @angular-devkit/architect 0.900.0-rc.6 @angular-devkit/build-angular
+        0.900.0-rc.6 @angular-devkit/build-optimizer 0.900.0-rc.6 @angular-devkit/build-webpack 0.900.0-rc.6 @angular-devkit/core 9.0.0-rc.6 @angular-devkit/schematics 9.0.0-rc.6 @ngtools/webpack 9.0.0-rc.6 @schematics/angular 9.0.0-rc.6 @schematics/update
+        0.900.0-rc.6 rxjs 6.5.3 typescript 3.6.4 webpack 4.41.2 girishs-mbp:cyberdyme girishthanki$ ls -l total 1016 -rw-r--r-- 1 girishthanki staff 1031 12 Dec 22:04 README.md -rw-r--r-- 1 girishthanki staff 3679 12 Dec 22:04 angular.json -rw-r--r--
+        1 girishthanki staff 429 12 Dec 22:04 browserslist drwxr-xr-x 5 girishthanki staff 160 12 Dec 22:04 e2e -rw-r--r-- 1 girishthanki staff 1021 12 Dec 22:04 karma.conf.js drwxr-xr-x 804 girishthanki staff 25728 12 Dec 22:04 node_modules -rw-r--r--
+        1 girishthanki staff 479979 12 Dec 22:04 package-lock.json -rw-r--r-- 1 girishthanki staff 1346 12 Dec 22:04 package.json drwxr-xr-x 11 girishthanki staff 352 12 Dec 22:04 src -rw-r--r-- 1 girishthanki staff 210 12 Dec 22:04 tsconfig.app.json
+        -rw-r--r-- 1 girishthanki staff 535 12 Dec 22:04 tsconfig.json -rw-r--r-- 1 girishthanki staff 270 12 Dec 22:04 tsconfig.spec.json -rw-r--r-- 1 girishthanki staff 1953 12 Dec 22:04 tslint.json girishs-mbp:cyberdyme girishthanki$ ls -l total 1016
+        -rw-r--r-- 1 girishthanki staff 1031 12 Dec 22:04 README.md -rw-r--r-- 1 girishthanki staff 3679 12 Dec 22:04 angular.json -rw-r--r-- 1 girishthanki staff 429 12 Dec 22:04 browserslist drwxr-xr-x 3 girishthanki staff 96 12 Dec 22:09 dist drwxr-xr-x
+        5 girishthanki staff 160 12 Dec 22:04 e2e -rw-r--r-- 1 girishthanki staff 1021 12 Dec 22:04 karma.conf.js drwxr-xr-x 805 girishthanki staff 25760 12 Dec 22:09 node_modules -rw-r--r-- 1 girishthanki staff 479979 12 Dec 22:04 package-lock.json -rw-r--r--
+        1 girishthanki staff 1346 12 Dec 22:04 package.json drwxr-xr-x 11 girishthanki staff 352 12 Dec 22:04 src -rw-r--r-- 1 girishthanki staff 210 12 Dec 22:04 tsconfig.app.json -rw-r--r-- 1 girishthanki staff 535 12 Dec 22:04 tsconfig.json -rw-r--r--
+        1 girishthanki staff 270 12 Dec 22:04 tsconfig.spec.json -rw-r--r-- 1 girishthanki staff 1953 12 Dec 22:04 tslint.json girishs-mbp:cyberdyme girishthanki$ ls -l total 1016 -rw-r--r-- 1 girishthanki staff 1031 12 Dec 22:04 README.md -rw-r--r--
+        1 girishthanki staff 3679 12 Dec 22:04 angular.json -rw-r--r-- 1 girishthanki staff 429 12 Dec 22:04 browserslist drwxr-xr-x 3 girishthanki staff 96 12 Dec 22:09 dist drwxr-xr-x 5 girishthanki staff 160 12 Dec 22:04 e2e -rw-r--r-- 1 girishthanki
+        staff 1021 12 Dec 22:04 karma.conf.js drwxr-xr-x 805 girishthanki staff 25760 12 Dec 22:09 node_modules -rw-r--r-- 1 girishthanki staff 479979 12 Dec 22:04 package-lock.json -rw-r--r-- 1 girishthanki staff 1346 12 Dec 22:04 package.json drwxr-xr-x
+        11 girishthanki staff 352 12 Dec 22:04 src -rw-r--r-- 1 girishthanki staff 210 12 Dec 22:04 tsconfig.app.json -rw-r--r-- 1 girishthanki staff 535 12 Dec 22:04 tsconfig.json -rw-r--r-- 1 girishthanki staff 270 12 Dec 22:04 tsconfig.spec.json -rw-r--r--
+        1 girishthanki staff 1953 12 Dec 22:04 tslint.json girishs-mbp:cyberdyme girishthanki$ ng add @angular/material Installing packages for tooling via npm. Installed packages for tooling via npm. ? Choose a prebuilt theme name, or "custom" for a
+        custom theme: Deep Purple/Amber [ Preview: https://material.angular.io?theme=deeppurple-amber ] ? Set up HammerJS for gesture recognition? Yes ? Set up browser animations for Angular Material? Yes UPDATE package.json (1436 bytes) ✔ Packages installed
+        successfully. UPDATE src/main.ts (391 bytes) UPDATE src/app/app.module.ts (502 bytes) UPDATE angular.json (3854 bytes) UPDATE src/index.html (489 bytes) UPDATE src/styles.scss (181 bytes) girishs-mbp:cyberdyme girishthanki$ ng generate @angular/material:nav
+        navigation CREATE src/app/navigation/navigation.component.scss (193 bytes) CREATE src/app/navigation/navigation.component.html (932 bytes) CREATE src/app/navigation/navigation.component.spec.ts (1276 bytes) CREATE src/app/navigation/navigation.component.ts
+        (607 bytes) UPDATE src/app/app.module.ts (1069 bytes) girishs-mbp:cyberdyme girishthanki$
+    </main>
+
+    <aside>
+        aside
+    </aside>
+
+    <footer>
+        footer
+    </footer>
+</div>

@@ -32,18 +32,23 @@ import { MatSidenav } from '@angular/material/sidenav';
   ]
 })
 export class NavigationComponent {
-  @ViewChild('drawer', {static: true}) sideNav: MatSidenav;
+  // @ViewChild('drawer', {static: true}) sideNav: MatSidenav;
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
       shareReplay()
     );
 
+  showSideBar = false;
+
   constructor(private breakpointObserver: BreakpointObserver) {}
 
   isHamburguer = true;
+
   toggleSideNav() {
     this.isHamburguer = !this.isHamburguer;
-    this.sideNav.toggle();
+    //this.sideNav.toggle();
+
+    this.showSideBar = !this.showSideBar;
   }
 }

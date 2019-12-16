@@ -37,16 +37,25 @@
         </mat-toolbar>
     </header>
 
-    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-        <div style="height: 64px; background-color: yellow;">
+    <!--
+        <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+            <div style="height: 64px; background-color: yellow;">
 
-        </div>
-        <mat-nav-list>
+            </div>
+            <mat-nav-list>
+                <a mat-list-item href="#">Link 2</a>
+                <a mat-list-item href="#">Link 3</a>
+                <a mat-list-item href="#">Link 4</a>
+            </mat-nav-list>
+        </mat-sidenav>
+        -->
+    <div *ngIf="showSideBar">
+        <ul>
             <a mat-list-item href="#">Link 2</a>
             <a mat-list-item href="#">Link 3</a>
             <a mat-list-item href="#">Link 4</a>
-        </mat-nav-list>
-    </mat-sidenav>
+        </ul>
+    </div>
 
     <main>
         npm WARN saveError ENOENT: no such file or directory, open '/Users/girishthanki/Development/Angular9/package.json' npm notice created a lockfile as package-lock.json. You should commit this file. npm WARN enoent ENOENT: no such file or directory, open
@@ -90,8 +99,7 @@
     <aside>
         aside
     </aside>
-
-    <footer>
-        footer
-    </footer>
 </div>
+<footer>
+    footer
+</footer>

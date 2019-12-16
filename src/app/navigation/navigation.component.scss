@@ -1,23 +1,3 @@
-/*
-.sidenav-container {
-    height: 100%;
-}
-
-.sidenav {
-    width: 200px;
-}
-
-.sidenav .mat-toolbar {
-    background: inherit;
-}
-
-.mat-toolbar.mat-primary {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-}
-*/
-
 .btn {
     cursor: pointer;
     margin: 20px;
@@ -34,40 +14,11 @@
 .container {
     display: grid;
     grid-template-areas: "header header header" "nav content side" "footer footer footer";
-    grid-template-columns: minmax(200px, auto) 1fr 200px;
+    grid-template-columns: minmax(0px, auto) 1fr 200px;
     grid-template-rows: auto 1fr auto;
     grid-gap: 10px;
-    height: 100vh;
+    height: calc(100vh - 16px);
 }
-
-
-/*
-.content {
-    grid-area: content;
-    display: flex;
-    align-self: stretch;
-    justify-content: stretch;
-    background-color: gray;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    min-width: 100%;
-    background-color: gray;
-    mat-sidenav {
-        margin-left: 0.5rem;
-        background-color: yellowgreen;
-    }
-    main {
-        background-color: pink;
-        width: 100%;
-        overflow-y: scroll;
-    }
-    aside {
-        margin-right: 0.5rem;
-        background-color: lightblue;
-    }
-}
-*/
 
 header {
     grid-area: header;

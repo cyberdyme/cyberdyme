@@ -10,6 +10,16 @@ import { MatSidenav } from '@angular/material/sidenav';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
   animations: [
+    trigger('flyInOut', [
+      state('in', style({ transform: 'translateX(0)' })),
+      transition('void => *', [
+        style({ transform: 'translateX(-100%)' }),
+        animate(300)
+      ]),
+      transition('* => void', [
+        animate(300, style({ transform: 'translateX(-100%)' }))
+      ])
+    ]),
     trigger('hamburguerX', [
       state('hamburguer', style({})),
       state('topX', style({
@@ -40,6 +50,7 @@ export class NavigationComponent {
     );
 
   showSideBar = false;
+  sideBarState = '';
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
@@ -47,8 +58,7 @@ export class NavigationComponent {
 
   toggleSideNav() {
     this.isHamburguer = !this.isHamburguer;
-    //this.sideNav.toggle();
-
     this.showSideBar = !this.showSideBar;
+    this.showSideBar ? this.sideBarState = '' : this.sideBarState = 'in';
   }
 }

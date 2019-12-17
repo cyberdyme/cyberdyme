@@ -1,55 +1,18 @@
-<!--
-<mat-toolbar style="z-index: 999;" color="primary">
-    <div (click)="toggleSideNav()" class="btn">
-        <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'topX'"></div>
-        <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'hide'"></div>
-        <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'bottomX'"></div>
-    </div>
-    <span>Cyberdyme</span>
-</mat-toolbar>
-
-<mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-        <div style="height: 64px; background-color: yellow;">
-
-        </div>
-        <mat-nav-list>
-            <a mat-list-item href="#">Link 2</a>
-            <a mat-list-item href="#">Link 3</a>
-            <a mat-list-item href="#">Link 4</a>
-        </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <router-outlet></router-outlet>
-    </mat-sidenav-content>
-</mat-sidenav-container>
--->
-
 <div class="container">
     <header>
         <mat-toolbar style="z-index: 999;" color="primary">
             <div (click)="toggleSideNav()" class="btn">
+                <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'hide'"></div>
                 <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'topX'"></div>
                 <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'hide'"></div>
                 <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'bottomX'"></div>
+                <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'hide'"></div>
             </div>
             <span>Cyberdyme</span>
         </mat-toolbar>
     </header>
 
-    <!--
-        <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-            <div style="height: 64px; background-color: yellow;">
-
-            </div>
-            <mat-nav-list>
-                <a mat-list-item href="#">Link 2</a>
-                <a mat-list-item href="#">Link 3</a>
-                <a mat-list-item href="#">Link 4</a>
-            </mat-nav-list>
-        </mat-sidenav>
-        -->
-    <div *ngIf="showSideBar">
+    <div *ngIf="showSideBar" [@flyInOut]="sideBarState">
         <ul>
             <a mat-list-item href="#">Link 2</a>
             <a mat-list-item href="#">Link 3</a>

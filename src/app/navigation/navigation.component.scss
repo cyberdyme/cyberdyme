@@ -16,7 +16,7 @@
     grid-template-areas: "header header header" "nav content side" "footer footer footer";
     grid-template-columns: minmax(0px, auto) 1fr 200px;
     grid-template-rows: auto 1fr auto;
-    grid-gap: 10px;
+    grid-gap: 8px;
     height: calc(100vh - 16px);
 }
 
@@ -50,6 +50,8 @@ footer {
     .container {
         grid-template-areas: "header" "nav" "content" "side" "footer";
         grid-template-columns: 1fr;
-        grid-template-rows: auto minmax(75px, auto) 1fr minmax(75px, auto) auto;
+        grid-gap: 0px;
+        grid-row-gap: 8px;
+        grid-template-rows: auto minmax(0px, auto) 1fr minmax(75px, auto) auto;
     }
 }

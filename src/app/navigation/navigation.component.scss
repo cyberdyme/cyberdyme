@@ -50,7 +50,6 @@ footer {
     .container {
         grid-template-areas: "header" "nav" "content" "side" "footer";
         grid-template-columns: 1fr;
-        grid-gap: 0px;
         grid-row-gap: 8px;
         grid-template-rows: auto minmax(0px, auto) 1fr minmax(75px, auto) auto;
     }

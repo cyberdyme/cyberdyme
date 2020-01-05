@@ -12,8 +12,8 @@
         </mat-toolbar>
     </header>
 
-    <div *ngIf="showSideBar" [@flyInOut]="sideBarState">
-        <ul>
+    <div *ngIf="showSideBar" [@flyInOut]="sideBarState" style="background-color: #111111;">
+        <ul style="margin-right: 32px">
             <a mat-list-item href="#">Link 2</a>
             <a mat-list-item href="#">Link 3</a>
             <a mat-list-item href="#">Link 4</a>
@@ -58,11 +58,8 @@
         navigation CREATE src/app/navigation/navigation.component.scss (193 bytes) CREATE src/app/navigation/navigation.component.html (932 bytes) CREATE src/app/navigation/navigation.component.spec.ts (1276 bytes) CREATE src/app/navigation/navigation.component.ts
         (607 bytes) UPDATE src/app/app.module.ts (1069 bytes) girishs-mbp:cyberdyme girishthanki$
     </main>
-
-    <aside>
-        aside
-    </aside>
 </div>
+
 <footer>
     footer
 </footer>

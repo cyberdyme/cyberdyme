@@ -1,15 +1,23 @@
 <div class="container">
     <header>
-        <mat-toolbar style="z-index: 999;" color="primary">
-            <div (click)="toggleSideNav()" class="btn">
-                <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'hide'"></div>
-                <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'topX'"></div>
-                <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'hide'"></div>
-                <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'bottomX'"></div>
-                <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'hide'"></div>
+        <div class="headerContent" fxLayout="row" fxLayoutAlign="space-between center">
+            <mat-toolbar style="z-index: 999;" color="primary">
+                <div (click)="toggleSideNav()" class="btn">
+                    <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'hide'"></div>
+                    <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'topX'"></div>
+                    <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'hide'"></div>
+                    <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'bottomX'"></div>
+                    <div class="icon-bar" [@hamburguerX]="isHamburguer ? 'hamburguer' : 'hide'"></div>
+                </div>
+                <span>Cyberdyme</span>
+            </mat-toolbar>
+            <div>
+                <svg style="z-index: 999;" version="1.1" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="white"
+                  d="M15,13H17V11H15M15,21H17V19H15M15,5H17V3H15M19,9H21V7H19M19,5H21V3H19M19,13H21V11H19M19,21H21V19H19M11,21H13V3H11M19,17H21V15H19M7,5H9V3H7M3,17H5V15H3M3,21H5V19H3M3,13H5V11H3M7,13H9V11H7M7,21H9V19H7M3,5H5V3H3M3,9H5V7H3V9Z" />
+                </svg>
             </div>
-            <span>Cyberdyme</span>
-        </mat-toolbar>
+        </div>
     </header>
 
     <div *ngIf="showSideBar" [@flyInOut]="sideBarState" style="background-color: #111111;">
@@ -21,6 +29,8 @@
     </div>
 
     <main>
+        <div class="spacer">
+        </div>
         npm WARN saveError ENOENT: no such file or directory, open '/Users/girishthanki/Development/Angular9/package.json' npm notice created a lockfile as package-lock.json. You should commit this file. npm WARN enoent ENOENT: no such file or directory, open
         '/Users/girishthanki/Development/Angular9/package.json' npm WARN Angular9 No description npm WARN Angular9 No repository field. npm WARN Angular9 No README data npm WARN Angular9 No license field. + @angular/cli@9.0.0-rc.6 added 260 packages from
         206 contributors and audited 2885 packages in 9.08s found 0 vulnerabilities girishs-mbp:Angular9 girishthanki$ ./node_modules/.bin/ng --version _ _ ____ _ ___ / \ _ __ __ _ _ _| | __ _ _ __ / ___| | |_ _| / △ \ | '_ \ / _` | | | | |/ _` | '__|

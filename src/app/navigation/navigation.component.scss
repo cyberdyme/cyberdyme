@@ -30,6 +30,10 @@ header {
     grid-area: nav;
 }
 
+.spacer {
+    visibility: hidden;
+}
+
 main {
     grid-area: content;
     background-color: pink;
@@ -39,7 +43,7 @@ main {
 @media (max-width: 768px) {
     header {
         grid-area: content;
-        mat-toolbar {
+        .headerContent {
             opacity: 0.75;
         }
     }
@@ -53,8 +57,13 @@ main {
         grid-template-rows: auto minmax(0px, auto) 1fr auto;
         height: calc(100vh);
     }
+    .spacer {
+        background-color: silver;
+        visibility: visible;
+        min-height: 58px;
+        height: 58px;
+    }
     main {
-        padding-top: 64px;
         grid-area: content;
         background-color: pink;
         overflow-y: none;

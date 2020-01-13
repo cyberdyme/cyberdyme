@@ -25,7 +25,7 @@ export class CanvasComponent implements AfterViewInit {
 
     setInterval(() => {
       this.pVoronoiD();
-    }, 1000);
+    }, 10);
     //this.draw();
   }
 
@@ -70,12 +70,20 @@ export class CanvasComponent implements AfterViewInit {
   }
 
   randhclr() {
+    /*
     return (
       '#' +
       ('00' + this.randgp(256).toString(16)).slice(-2) +
       ('00' + this.randgp(256).toString(16)).slice(-2) +
       ('00' + this.randgp(256).toString(16)).slice(-2)
     );
+    */
+   return (
+    '#' +
+    ('00' + this.randgp(256).toString(16)).slice(-2) +
+    ('00') +
+    ('00')
+  );
   }
 
   Metric(x, y, mt) {

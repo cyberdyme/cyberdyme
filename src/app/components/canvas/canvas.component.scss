@@ -1,0 +1,14 @@
+p {
+    font-family: Lato;
+}
+
+canvas {
+    border: 2px solid rgba(0, 0, 0, 0.12);
+    background: #111;
+    transition: 300ms;
+    border-radius: 4px;
+}
+
+canvas:hover {
+    border: 2px solid rgba(0, 0, 0, 0.54);
+}

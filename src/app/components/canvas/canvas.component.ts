@@ -12,23 +12,65 @@ import {
   styleUrls: ['./canvas.component.scss']
 })
 export class CanvasComponent implements AfterViewInit {
+
   constructor() {}
+;
+  private X = new Array(600);
+  private Y = new Array(600);
+  private C = new Array(600);
   /** Template reference to the canvas element */
   @ViewChild('canvasEl') canvasEl: ElementRef;
 
   /** Canvas 2d context */
   private context: CanvasRenderingContext2D;
+  private canvas: HTMLCanvasElement;
 
   ngAfterViewInit() {
+    this.canvas = this.canvasEl.nativeElement as HTMLCanvasElement;
     this.context = (this.canvasEl
       .nativeElement as HTMLCanvasElement).getContext('2d');
 
-    setInterval(() => {
-      this.pVoronoiD();
-    }, 10);
-    //this.draw();
+    const w1 = this.canvas.width - 2;
+    const h1 = this.canvas.height - 2;
+    for (let i = 0; i < 500; i++) {
+      this.X[i] = this.randgp(w1);
+      this.Y[i] = this.randgp(h1);
+      this.C[i] = this.randhclr();
+    }
+    // setInterval(() => this.draw1(), 10);     // this.draw();
+    this.drawBoard(this.canvas, this.context);
   }
 
+  drawBoard(cnvas: HTMLCanvasElement, context: CanvasRenderingContext2D) {
+    const bw = 400;
+    const bh = 400;
+    const p = 8;
+    const cw = bw + (p * 2) + 1;
+    const ch = bh + (p * 2) + 1;
+
+    for (let x = 0; x <= bw; x += 40) {
+        context.moveTo(0.5 + x + p, p);
+        context.lineTo(0.5 + x + p, bh + p);
+    }
+
+    for (let x = 0; x <= bh; x += 40) {
+        context.moveTo(p, 0.5 + x + p);
+        context.lineTo(bw + p, 0.5 + x + p);
+    }
+
+    context.strokeStyle = 'white';
+    context.stroke();
+}
+
+
+  private draw1() {
+    for (let i = 0; i < 32; i++) {
+      const index = this.randgp(500);
+      this.X[index] = this.X[index] - (this.randgp(8) - 4);
+      this.Y[index] = this.Y[index] - (this.randgp(8) - 4);
+    }
+    this.pVoronoiD();
+  }
   /**
    * Draws something using the context we obtained earlier on
    */
@@ -57,19 +99,19 @@ export class CanvasComponent implements AfterViewInit {
     }
   }
 
-  open() {
+open() {
     window.open('https://github.com/realappie', '_blank');
   }
 
-  getRandom(min: number, max: number) {
+getRandom(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  randgp(max: number) {
+randgp(max: number) {
     return Math.floor(Math.random() * max);
   }
 
-  randhclr() {
+randhclr() {
     /*
     return (
       '#' +
@@ -86,7 +128,7 @@ export class CanvasComponent implements AfterViewInit {
   );
   }
 
-  Metric(x, y, mt) {
+Metric(x, y, mt) {
     if (mt === 1) {
       return Math.sqrt(x * x + y * y);
     }
@@ -101,7 +143,7 @@ export class CanvasComponent implements AfterViewInit {
     }
   }
 
-  pVoronoiD() {
+pVoronoiD() {
     const cvs = this.canvasEl.nativeElement as HTMLCanvasElement;
     const ctx = (this.canvasEl.nativeElement as HTMLCanvasElement).getContext(
       '2d'
@@ -117,37 +159,30 @@ export class CanvasComponent implements AfterViewInit {
 
     const w1 = w - 2;
     const h1 = h - 2;
-    const n = 50;
+    const n = 500;
     const mt = 1;
 
-    const X = new Array(n);
-    const Y = new Array(n);
-    const C = new Array(n);
     ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, w, h);
-    for (let i = 0; i < n; i++) {
-      X[i] = this.randgp(w1);
-      Y[i] = this.randgp(h1);
-      C[i] = this.randhclr();
-    }
+
     for (y = 0; y < h1; y++) {
       for (x = 0; x < w1; x++) {
         dm = this.Metric(h1, w1, mt);
         j = -1;
         for (let i = 0; i < n; i++) {
-          d = this.Metric(X[i] - x, Y[i] - y, mt);
+          d = this.Metric(this.X[i] - x, this.Y[i] - y, mt);
           if (d < dm) {
             dm = d;
             j = i;
           }
         }
-        ctx.fillStyle = C[j];
+        ctx.fillStyle = this.C[j];
         ctx.fillRect(x, y, 1, 1);
       }
     }
     ctx.fillStyle = 'black';
     for (let i = 0; i < n; i++) {
-      ctx.fillRect(X[i], Y[i], 3, 3);
+      ctx.fillRect(this.X[i], this.Y[i], 3, 3);
     }
   }
 }
@@ -155,6 +190,7 @@ export class CanvasComponent implements AfterViewInit {
 /*
 
 <!-- VoronoiD.html -->
+https://rosettacode.org/wiki/Voronoi_diagram#Version_.232.
 <html>
 <head><title>Voronoi diagram</title>
 <script>
